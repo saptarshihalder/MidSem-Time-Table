@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Timetable</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff9a56 0%, #ff6b35 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        
+        .timetable {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        th, td {
+            border: 2px solid #333;
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+        
+        .header-row th {
+            background: #f0f0f0;
+            color: #333;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .date-cell {
+            background: #ffe8d6;
+            color: #333;
+            font-weight: bold;
+            width: 120px;
+            font-size: 0.9em;
+        }
+        
+        .morning-slot, .evening-slot {
+            width: 200px;
+            font-size: 0.85em;
+            line-height: 1.3;
+        }
+        
+        .morning-slot {
+            background: #fff;
+        }
+        
+        .evening-slot {
+            background: #fff;
+        }
+        
+        .course-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        
+        .classroom {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 2px;
+        }
+        
+        .roll-numbers {
+            color: #7b68ee;
+            font-size: 0.8em;
+            font-family: monospace;
+        }
+        
+        .empty-cell {
+            background: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .header {
+                font-size: 1.4em;
+                padding: 15px;
+            }
+            
+            th, td {
+                padding: 8px 4px;
+                font-size: 0.8em;
+            }
+            
+            .date-cell {
+                width: 80px;
+            }
+            
+            .morning-slot, .evening-slot {
+                width: 140px;
+            }
+        }
+        
+        .highlight-green {
+            background: #e8f5e8 !important;
+            border-color: #4caf50;
+        }
+        
+        .highlight-blue {
+            background: #e3f2fd !important;
+            border-color: #2196f3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            TIME TABLE
+        </div>
+        
+        <div class="timetable">
+            <table>
+                <thead>
+                    <tr class="header-row">
+                        <th>EXAM</th>
+                        <th>MORNING (10AM TO 12PM)</th>
+                        <th>EVENING (3PM TO 5PM)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date-cell">20/09/2025</td>
+                        <td class="morning-slot empty-cell"></td>
+                        <td class="evening-slot">
+                            <div class="course-name">ROBOTIC PERCEPTION</div>
+                            <div class="classroom">(L8)</div>
+                            <div class="roll-numbers">21011-22241<br>22241-2420701</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">21/09/2025</td>
+                        <td class="morning-slot empty-cell"></td>
+                        <td class="evening-slot">
+                            <div class="course-name">ENVIRONMENTAL IMPACT ASSESSMENT</div>
+                            <div class="classroom">(L1)</div>
+                            <div class="roll-numbers">-</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">22/09/2025</td>
+                        <td class="morning-slot">
+                            <div class="course-name">INTELLIGENT ROBOTICS</div>
+                            <div class="classroom">(L6)</div>
+                            <div class="roll-numbers">-</div>
+                        </td>
+                        <td class="evening-slot empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">23/09/2025</td>
+                        <td class="morning-slot empty-cell"></td>
+                        <td class="evening-slot empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">24/09/2025</td>
+                        <td class="morning-slot empty-cell"></td>
+                        <td class="evening-slot">
+                            <div class="course-name">ACCELERATED ARTIFICIAL INTELLIGENCE</div>
+                            <div class="classroom">(L8)</div>
+                            <div class="roll-numbers">-</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">25/09/2025</td>
+                        <td class="morning-slot empty-cell"></td>
+                        <td class="evening-slot empty-cell"></td>
+                    </tr>
+                    <tr class="highlight-green">
+                        <td class="date-cell">26/09/2025</td>
+                        <td class="morning-slot empty-cell"></td>
+                        <td class="evening-slot">
+                            <div class="course-name">MACHINE LEARNING WITH GRAPHS</div>
+                            <div class="classroom">(AB 1-A1)</div>
+                            <div class="roll-numbers">-</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">27/09/2025</td>
+                        <td class="morning-slot empty-cell"></td>
+                        <td class="evening-slot">
+                            <div class="course-name">CLOUD COMPUTING</div>
+                            <div class="classroom">(L6)</div>
+                            <div class="roll-numbers">-</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">28/09/2025</td>
+                        <td class="morning-slot empty-cell"></td>
+                        <td class="evening-slot empty-cell"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
